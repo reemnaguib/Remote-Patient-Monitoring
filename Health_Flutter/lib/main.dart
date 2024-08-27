@@ -12,11 +12,12 @@ import 'mqtt_service.dart';
 import 'sensor_data.dart';
 import 'send_servo.dart';
 import 'package:provider/provider.dart';
+import 'chat_screen.dart';
 
 void main() async {
   // Ensure Flutter engine is initialized
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialize Firebase with the specified options
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -39,7 +40,7 @@ class HealthCareMonitorApp extends StatelessWidget {
         builder: (context) {
           // Connect to the MQTT broker when the app is built
           _mqttService.connect(context);
-          
+
           return MaterialApp(
             debugShowCheckedModeBanner: false, // Hide the debug banner
             theme: ThemeData(
@@ -54,13 +55,20 @@ class HealthCareMonitorApp extends StatelessWidget {
             initialRoute: '/', // Set the initial route
             routes: {
               '/': (context) => MainScreen(), // Route for the main screen
-              '/login': (context) => LoginScreen(), // Route for the login screen
+              '/login': (context) =>
+                  LoginScreen(), // Route for the login screen
               '/home': (context) => HomeScreen(), // Route for the home screen
-              '/ecgHeartRate': (context) => HeartRateScreen(), // Route for the ECG heart rate screen
-              '/temperature': (context) => TemperatureScreen(), // Route for the temperature screen
-              '/pressure': (context) => PressureScreen(), // Route for the pressure screen
-              '/oxygenHeartRate': (context) => OxygenHeartRateScreen(), // Route for the oxygen heart rate screen
-              '/sendServo': (context) => SendServoScreen(), // Route for the send servo screen
+              '/ecgHeartRate': (context) =>
+                  HeartRateScreen(), // Route for the ECG heart rate screen
+              '/temperature': (context) =>
+                  TemperatureScreen(), // Route for the temperature screen
+              '/pressure': (context) =>
+                  PressureScreen(), // Route for the pressure screen
+              '/oxygenHeartRate': (context) =>
+                  OxygenHeartRateScreen(), // Route for the oxygen heart rate screen
+              '/sendServo': (context) =>
+                  SendServoScreen(), // Route for the send servo screen
+              '/chat': (context) => ChatScreen(),
             },
           );
         },
@@ -99,7 +107,8 @@ class MainScreen extends StatelessWidget {
                 // Get Started button
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/login'); // Navigate to the login screen
+                    Navigator.pushNamed(
+                        context, '/login'); // Navigate to the login screen
                   },
                   child: Text('Get Started'), // Button text
                 ),
