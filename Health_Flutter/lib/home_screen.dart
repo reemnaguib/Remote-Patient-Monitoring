@@ -81,11 +81,32 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // List of items with images, labels, and routes
     final items = [
-      {'image': 'assets/images/photo_2024-08-26_13-42-41.jpg', 'label': 'Temperature', 'route': '/temperature'},
-      {'image': 'assets/images/photo_2024-08-26_13-40-25.jpg', 'label': 'ECG Heart Rate', 'route': '/ecgHeartRate'},
-      {'image': 'assets/images/photo_2024-08-26_13-41-40.jpg', 'label': 'Pressure', 'route': '/pressure'},
-      {'image': 'assets/images/photo_2024-08-26_13-42-30.jpg', 'label': 'Oxygen & Heart Rate', 'route': '/oxygenHeartRate'},
-      {'image': 'assets/images/photo_2024-08-26_13-42-04.jpg', 'label': 'Medecine', 'route': '/sendServo'},
+      {
+        'image': 'assets/images/photo_2024-08-26_13-42-41.jpg',
+        'label': 'Temperature',
+        'route': '/temperature'
+      },
+      {
+        'image': 'assets/images/photo_2024-08-26_13-40-25.jpg',
+        'label': 'ECG Heart Rate',
+        'route': '/ecgHeartRate'
+      },
+      {
+        'image': 'assets/images/photo_2024-08-26_13-41-40.jpg',
+        'label': 'Pressure',
+        'route': '/pressure'
+      },
+      {
+        'image': 'assets/images/photo_2024-08-26_13-42-30.jpg',
+        'label': 'Oxygen & Heart Rate',
+        'route': '/oxygenHeartRate'
+      },
+      {
+        'image': 'assets/images/photo_2024-08-26_13-42-04.jpg',
+        'label': 'Medecine',
+        'route': '/sendServo'
+      },
+      {'image': 'assets/images/photo_2024-08-27_00-56-12.jpg', 'label': 'Chat', 'route': '/chat'}
     ];
 
     return Scaffold(
